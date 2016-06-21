@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Prac4</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body style="background-color:silver">
+		<div class="container">
+			<div class="jumbotron col-xs-12">
+				<img src="HR.jpg" class="img-thumbnail img-responsive col-xs-6" width="500px">
+				<h1 class="col-xs-6">Halo Reach</h1>
+				<p class="col-xs-6">Ahora viene a Halo 5: Guardians</p>
+				<a href="#encuesta" type="button" class="btn btn-info col-xs-6">encuesta</a>
+				<a href="#Imagenes" type="button" class="btn btn-info col-xs-6">Imagenes</a>
+				<a href="#Descargando..." type="button" class="btn btn-info col-xs-6">Descargando...</a>
+				<button type="button" class="btn btn-danger col-xs-6" id="boton">Apagado</button>
+			</div>
+			<div class="row"></div>
+			<div class="row">
+				<div class="alert alert-danger" id="alert">
+					<a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<strong>No!</strong> Este boton no sirve.
+				</div>
+			</div>
+			<div class="panel panel-primary"><a name=encuesta></a>
+				<div class="panel-heading text-center">Encuesta rapida</div>
+				<div class="panel-body text-center">Estas emocionad@ por la actualizacion?</div>
+			</div>
+			<div class="row">
+				<button type="button" class="btn btn-success col-xs-6">Si *-*</button>
+				<button type="button" class="btn btn-danger col-xs-6">No .-.</button>
+			</div>
+			<div class="row">
+				<h1 class="text-center">Imagenes</h1><a name=Imagenes></a>
+			</div>
+			<div class="row">
+				<div class="col-xs-4">
+					<img src="Jun.jpg" class="img-thumbnail img-responsive">
+					<h3>Armaduras</h3>
+					<button type="button" class="btn btn-success col-xs-6">Like</button>
+					<button type="button" class="btn btn-danger col-xs-6">Dislike</button>
+				</div>
+				<div class="col-xs-4">
+					<img src="REQs.jpg" class="img-thumbnail img-responsive">
+					<h3>REQs</h3>
+					<button type="button" class="btn btn-success col-xs-6">Like</button>
+					<button type="button" class="btn btn-danger col-xs-6">Dislike</button>
+				</div>
+				<div class="col-xs-4">
+					<img src="Phaeton.png" class="img-thumbnail img-responsive">
+					<h3>Armas y vehiculos</h3>
+					<button type="button" class="btn btn-success col-xs-6">Like</button>
+					<button type="button" class="btn btn-danger col-xs-6">Dislike</button>
+				</div>
+			</div>
+			<div class="row">
+				<h1>Descargando...</h1><a name=Descargando...></a>
+				<div class="progress">
+					<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="barra"></div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-2.2.3.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$("#alert").hide();
+			$("#boton").click(function()
+			{
+				$("#alert").show();
+			});
+			$("#barra").animate({
+				width: "100%"
+			}, 3000);
+		</script>
+	</body>
+</html>
