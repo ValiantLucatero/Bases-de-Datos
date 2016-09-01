@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<!--Ejercicio para manejar funciones de color-->
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<title>Bloge</title>
+		<link rel="stylesheet/less" type="text/css" href="CDC.less"/>		
+		<script src="js/less.min.js"></script>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body id="body">
+		<div class="container">
+			<div class="row">
+				<nav class="navbar navbar-inverse navbar-static-top">
+					<div class="container">
+						<ul class="nav nav-tabs">
+							<li><a href="ugly_webpage_main.html">Home</a></li>
+							<li><a href="ugly_webpage_pepe.html">Pepe Meme</a></li>
+							<li><a href="ugly_webpage_notpepe.html">Not Pepe Meme</a></li>
+							<li><a href="ugly_webpage_text.html">Historys</a></li>
+							<li><a href="CdeC.html">Cambiar colores</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			
+			<div class="jumbotron col-xs-12" id="jumbotron">
+				<img src="img/header.PNG" class="img-circle col-xs-6" width="500px"/>
+				<h1 class="col-xs-6">Cambio de Color</h1>
+			</div>
+			
+			<div class="form-group">
+					<label>Elige un color</label>
+					<input type="color" class="form-control" id="col">
+			</div>
+		</div>
+		<script>
+			document.getElementsByTagName("input")[0].onchange=function()
+			{
+				var col=document.getElementsByTagName("input")[0].value;
+				less.modifyVars({"@col":col});
+				document.cookie=col;
+				less.refreshStyles();
+			};
+			if(typeof(document.cookie)!='undefined')
+			{
+				less.modifyVars({"@col":document.cookie});
+				less.refreshStyles();
+			}
+		</script>
+	</body>
+</html>

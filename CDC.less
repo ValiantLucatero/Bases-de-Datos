@@ -1,0 +1,26 @@
+@col:black;
+@ejem:0;
+.mixin(@ejem)
+{
+	background-color:@ejem;
+}
+#body
+{
+	& when(luma(@col)>=50%)
+	{
+		color:black;
+	}
+	& when(luma(@col)<50%)
+	{
+		color:white;
+	}
+	.mixin(@col);
+}
+#jumbotron
+{
+	.mixin(average(@col,gray));
+}
+#div
+{
+	.mixin(average(average(@col,gray),gray));
+}
